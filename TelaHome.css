@@ -32,7 +32,7 @@ p {
 .PS2P {
     padding-left: 20px;
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
     position: relative;
     font-family: "Press Start 2P";
     font-size: 150%;
@@ -55,12 +55,13 @@ header {
 
 .categories {
     display: grid;
+    max-width: 7-px;
     grid-template-columns: repeat(4, 1fr); 
-    gap: 20px; 
+    gap: 1px; 
     justify-content: center;
     background-color: #5AE7A3;
     padding: 100px;
-    border-top-right-radius: 10px;
+    border-top-right-radius: 100px;
     border-bottom-right-radius: 10px;
 }
 
@@ -80,7 +81,8 @@ header {
     display: grid;
     grid-template-columns: 1fr 200px;
     gap: 20px;
-    max-width: algumvalor;
+    height: 10%;
+    max-width: 80%;
     justify-content: center;
     background-color: #5AE7A3;
     padding: 20px;
@@ -146,6 +148,10 @@ header {
 .category.personalizacao {
     background: url('imagens/personalizacao.png');
     background-size: cover;
+}
+
+footer{
+    padding-top: 50px;
 }
 
 /* Adicione outras classes de categoria conforme necessário */
