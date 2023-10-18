@@ -9,11 +9,11 @@ body {
 }
 
 p {
-    padding-left: 35%;
+    padding-left: 0.5%;
     padding-bottom: 103%;
     justify-content: center;
     text-align: center;
-    font-size: 10px;
+    font-size: 30px;
 }
 
 .Arvo {
@@ -35,7 +35,7 @@ p {
     padding-bottom: 40px;
     position: relative;
     font-family: "Press Start 2P";
-    font-size: 100%;
+    font-size: 150%;
     margin: 0;
     text-align: center;
     width: fit-content;
