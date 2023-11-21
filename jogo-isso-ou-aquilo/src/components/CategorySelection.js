@@ -1,27 +1,48 @@
-import React from 'react';
-import '../styles/CategorySelection.css';
-import GameCategory from './GameCategory';
-import GameFooter from './GameFooter';
-import PillarImage from './PillarImage';
+// components/CategorySelectionScreen.js
+import React, { useState } from 'react';
+import './CategorySelection.css';
 
-const CategorySelectionScreen = () => {
+const CategorySelection = ({ onSelectCategory }) => {
+  const [selectedCategory, setSelectedCategory] = useState('');
+
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const handleStartGame = () => {
+    if (selectedCategory) {
+      onSelectCategory(selectedCategory);
+    } else {
+      alert('Por favor, selecione uma categoria antes de iniciar o jogo.');
+    }
+  };
+
   return (
-    <div className="game-category-selection">
-      <PillarImage imageSrc="path_to_your_image" />
-      <div className="main-box">
-        <div className="categories-title">Categorias</div>
-        <div className="categories-box">
-          <GameCategory title="Categoria 1" imageUrl="..styles/heroi.png" />
-          <GameCategory title="Categoria 2" imageUrl="/categoria2.png" />
-          <GameCategory title="Categoria 3" imageUrl="/categoria3.png" />
-          <GameCategory title="Categoria 4" imageUrl="/categoria4.png" />
-          <GameCategory title="Categoria 5" imageUrl="/categoria5.png" />
-          <GameCategory title="Categoria 6" imageUrl="/categoria6.png" />
+    <div>
+      <header></header>
+      <p className="paragrafo PS2P branco">Categorias</p>
+      <div className="container">
+        <div className="categories">
+          <div className={`category herois ${selectedCategory === 'herois' ? 'selected' : ''}`} onClick={() => handleCategorySelect('herois')}>
+            <p className="paragrafo Arvo roxo">Heróis</p>
+          </div>
+
+          <div className={`category comidas ${selectedCategory === 'comidas' ? 'selected' : ''}`} onClick={() => handleCategorySelect('comidas')}>
+            <p className="paragrafo Arvo roxo">Comidas</p>
+          </div>
+          {/* Adicione outras categorias conforme necessário */}
         </div>
-        <GameFooter gameTitle="Título do Jogo" />
+        <div className="column">
+          {/* Conteúdo da coluna à direita */}
+          <img src="./dados.png" alt="Coluna da direita" />
+        </div>
       </div>
+      <footer>
+        <img src="./thisorthat.png" alt="Rodapé com imagem" />
+      </footer>
+      <button onClick={handleStartGame}>Iniciar Jogo</button>
     </div>
   );
 };
 
-export default CategorySelectionScreen;
+export default CategorySelection;

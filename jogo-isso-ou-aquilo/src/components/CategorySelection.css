@@ -1,0 +1,160 @@
+/* styles.css */
+body {
+    background: #87439F;
+    margin: 0;
+    justify-content: center;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+paragrafo {
+    padding-left: 0.5%;
+    padding-bottom: 103%;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+}
+
+.Arvo {
+    position: relative;
+    font-family: "Arvo";
+    margin: 0;
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+}
+
+.branco {
+    color: #fff;
+}
+
+.PS2P {
+    padding-left: 20px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    position: relative;
+    font-family: "Press Start 2P";
+    font-size: 150%;
+    margin: 0;
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+}
+
+.roxo {
+    color: #441156;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.categories {
+    display: grid;
+    max-width: 7-px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    justify-content: center;
+    background-color: #5AE7A3;
+    padding: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 10px;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+    max-width: 50%; 
+    padding: 100px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 20px;
+    height: 10%;
+    max-width: 80%;
+    justify-content: center;
+    background-color: #5AE7A3;
+    padding: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.column {
+    text-align: center;
+}
+
+.column img {
+    width: 89px;
+    height: auto;
+}
+
+.category {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    margin: 39px;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-size: cover;
+    border-radius: 5px;
+}
+
+.category.herois {
+    background: url('../../public/i6.png');
+    background-size: cover;
+}
+
+.category.comidas {
+    background: url('../../public/icone.png');
+    background-size: cover;
+}
+
+.category.animais {
+    background: url('../../public/iconeacessados.png');
+    background-size: cover;
+}
+
+.category.cantor {
+    background: url('../../public/botaoamarelo.png');
+    background-size: cover;
+}
+
+
+.category.personalizacao {
+    background: url('../../public/heroi.png');
+    background-size: cover;
+
+}
+
+.category.paises {
+    background: url('../../public/i1.png');
+    background-size: cover;
+}
+
+footer {
+    justify-content: left;
+    padding-top: 10px;
+    display: flex;
+}
+.footer.img{
+    position: left;
+    width: 89px;
+    height: auto;
+}
+/* Adicione outras classes de categoria conforme necessário */
+/*
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+}*/

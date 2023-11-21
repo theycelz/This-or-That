@@ -5,6 +5,7 @@ import Score from './Score';
 import Login from './Login';
 import CategorySelection from './CategorySelection';
 
+
 const options = {
   category1: ['path/to/image1.jpg', 'path/to/image2.jpg'],
   category2: ['path/to/image3.jpg', 'path/to/image4.jpg'],
