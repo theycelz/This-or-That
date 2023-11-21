@@ -1,7 +1,6 @@
 // components/CategorySelectionScreen.js
 import React, { useState } from 'react';
-import './CategorySelection.css';
-
+import '../styles/CategorySelection.css';
 const CategorySelection = ({ onSelectCategory }) => {
   const [selectedCategory, setSelectedCategory] = useState('');
 
@@ -19,18 +18,28 @@ const CategorySelection = ({ onSelectCategory }) => {
 
   return (
     <div>
-      <header></header>
+      <header>
+      </header>
       <p className="paragrafo PS2P branco">Categorias</p>
       <div className="container">
         <div className="categories">
-          <div className={`category herois ${selectedCategory === 'herois' ? 'selected' : ''}`} onClick={() => handleCategorySelect('herois')}>
+          <div className={`category cantor ${selectedCategory === 'cantor' ? 'selected' : ''}`} onClick={() => handleCategorySelect('Cantor')}>
+            <p className="paragrafo Arvo roxo">Cantor</p>
+          </div>
+
+          <div className={`category animais ${selectedCategory === 'animais' ? 'selected' : ''}`} onClick={() => handleCategorySelect('Animais')}>
+            <p className="paragrafo Arvo roxo">Animais</p>
+          </div>
+
+          <div className={`category comidas ${selectedCategory === 'comidas' ? 'selected' : ''}`} onClick={() => handleCategorySelect('Comidas')}>
+            <p className="paragrafo Arvo roxo">Comida</p>
+          </div>
+
+          <div className={`category herois  ${selectedCategory === 'herois' ? 'selected' : ''}`} onClick={() => handleCategorySelect('Heróis')}>
             <p className="paragrafo Arvo roxo">Heróis</p>
           </div>
 
-          <div className={`category comidas ${selectedCategory === 'comidas' ? 'selected' : ''}`} onClick={() => handleCategorySelect('comidas')}>
-            <p className="paragrafo Arvo roxo">Comidas</p>
-          </div>
-          {/* Adicione outras categorias conforme necessário */}
+          {/* Add outras categorias*/}
         </div>
         <div className="column">
           {/* Conteúdo da coluna à direita */}

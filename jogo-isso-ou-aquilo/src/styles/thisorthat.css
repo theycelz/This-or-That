@@ -1,0 +1,43 @@
+.game-screen {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.side-left,
+.side-right {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+
+.side-left {
+    left: 0;
+    background: linear-gradient(to bottom right, #FF512F, #DD2476);
+}
+
+.side-right {
+    right: 0;
+    background: linear-gradient(to bottom left, #6A11CB, #2871fa);
+}
+
+.game-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.choose-button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
