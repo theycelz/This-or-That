@@ -1,0 +1,40 @@
+.game-category-selection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }
+   
+   .main-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+   
+   .categories-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+   }
+   
+   .game-category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+   
+   .category-box {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    margin-bottom: 10px;
+   }
+   
+   .pillar-image {
+    align-self: flex-end;
+   }
+   
+   .pillar-image img {
+    width: 100px;
+    height: auto;
+   }
+   

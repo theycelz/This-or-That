@@ -1,0 +1,127 @@
+
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #87439F;
+    margin: 0;
+}
+
+.PS2P {
+    font-family: "Press Start 2P";
+}
+
+.Arvo {
+    font-family: "Arvo";
+}
+
+.Azul {
+    color: #485CC7;
+}
+
+.BemVindo {
+    position: relative;
+    font-size: 34px;
+    margin: 0;
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.Adentre {
+    position: relative;
+    font-size: 30px;
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.LoginMenu {
+    background-color: #D9D9D9;
+    font-size: 30px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    height: 75vh;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.textbox {
+    background-color: #F0EFFF;
+    color: #A7A3FF;
+    margin: 10px 0;
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.formLogin {
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ConfirmationButtons {
+    display: block;
+    align-items: right;
+    width: 100%;
+}
+
+.login-button {
+    background-color: #542971;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: #542971;
+    font-size: 16px;
+    box-shadow: 0px 4px 61px 0px rgba(77, 71, 195, 0.40);
+}
+
+.register-button {
+    color: #B5B5B5;
+    border: none;
+    padding: none;
+    font-size: 16px;
+    background-color: #D9D9D9;
+}
+
+.ImgControllers {
+    position: relative;
+    width: 300px;
+    height: 100%;
+    background-size: cover;
+    background-position: left center;
+}
+
+.ImgControllers img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.Menu {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-items: end;
+}
+
