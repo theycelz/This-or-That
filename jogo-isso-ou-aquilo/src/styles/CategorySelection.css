@@ -25,6 +25,7 @@ body {
     position: relative;
     font-family: "Arvo";
     margin: 0;
+    padding-left: 20PX;
     font-size: 20px;
     text-align: center;
     width: fit-content;
@@ -37,11 +38,11 @@ body {
 
 .PS2P {
     padding-left: 20px;
-    padding-top: 40px;
-    padding-bottom: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     position: relative;
     font-family: "Press Start 2P";
-    font-size: 150%;
+    font-size: 170%;
     margin: 0;
     text-align: center;
     width: fit-content;
@@ -75,7 +76,7 @@ header {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
     gap: 0px; 
-    max-width: 50%; 
+    max-width: 55%; 
     padding: 100px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -99,6 +100,7 @@ header {
 
 .column {
     text-align: center;
+    padding-left: 250px;
     background-color:#5AE7A3;
 }
 
@@ -151,6 +153,8 @@ header {
     background-size: cover;
 }*/
 
+
+
 footer {
     justify-content: left;
     padding-top: 10px;
@@ -158,8 +162,8 @@ footer {
 }
 .footer.img{
     position: left;
-    width: 89px;
-    height: auto;
+    width: 20px;
+    height: 60px;
 }
 
 @media (max-width: 600px) {
