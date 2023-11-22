@@ -1,43 +1,63 @@
+
+.side-left,
+.side-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 .game-screen {
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-    position: relative;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+body {
+  background-color: #ebbd05;
 }
 
 .side-left,
 .side-right {
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    overflow: hidden;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
 }
 
 .side-left {
-    left: 0;
-    background: linear-gradient(to bottom right,  #87439F, #87439F);
+  left: 0;
+  background: linear-gradient(to bottom right, #87439f, #87439f);
 }
 
 .side-right {
-    right: 0;
-    background: linear-gradient(to bottom left, #5AE7A3, #5AE7A3);
+  right: 0;
+  background: linear-gradient(to bottom left, #5ae7a3, #5ae7a3);
 }
 
 .game-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: auto; /* Alterei para 'auto' para manter a proporção */
+  max-height: 80%; /* Ajuste a altura máxima conforme necessário */
+  object-fit: contain; /* ou 'cover', dependendo do efeito desejado */
 }
 
 .choose-button {
-    display: block;
-    margin: 0 auto;
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 18px;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }

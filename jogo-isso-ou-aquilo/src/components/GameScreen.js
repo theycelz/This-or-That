@@ -9,14 +9,18 @@ const GameScreen = () => {
     <div className="game-screen">
       <h1>Categoria selecionada: {category}</h1>
       <div className="side-left">
-                <img className="game-image" src="./image1.png" alt="image1" />
-                <button className="choose-button">Escolher 1</button>
-            </div>
-            <div className="side-right">
-                <img className="game-image" src="./image2.png" alt="image2" />
-                <button className="choose-button">Escolher 2</button>
-            </div>
-      {/* Restante do seu código */}
+        <div className="content-wrapper">
+          <img className="game-image" src="./image1.png" alt="image1" />
+          <button className="choose-button">Escolher 1</button>
+        </div>
+      </div>
+      <div className="side-right">
+        <div className="content-wrapper">
+          <img className="game-image" src="./image2.png" alt="image2" />
+          <button className="choose-button">Escolher 2</button>
+        </div>
+      </div>
+      {/* Restante*/}
     </div>
   );
 };
