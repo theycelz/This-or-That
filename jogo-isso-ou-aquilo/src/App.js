@@ -18,16 +18,16 @@ import Game from './components/Game';
 import './App.css';
 
 function App() {
- return (
-  <div className="App">
-    <Router>
-      <Routes>
-        <Route path="/gamescreen" element={<Game />} />
-        <Route path="/" element={<Game />} />
-      </Routes>
-    </Router>
-  </div>
- );
+  return (
+    <div className="App">
+      <Router>
+        <Routes>
+          <Route path="/gamescreen" element={<Game />} />
+          <Route path="/" element={<Game />} />
+        </Routes>
+      </Router>
+    </div>
+  );
 }
 
 export default App;
