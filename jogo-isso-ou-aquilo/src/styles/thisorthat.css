@@ -15,12 +15,12 @@
 
 .side-left {
     left: 0;
-    background: linear-gradient(to bottom right, #FF512F, #DD2476);
+    background: linear-gradient(to bottom right,  #87439F, #87439F);
 }
 
 .side-right {
     right: 0;
-    background: linear-gradient(to bottom left, #6A11CB, #2871fa);
+    background: linear-gradient(to bottom left, #5AE7A3, #5AE7A3);
 }
 
 .game-image {

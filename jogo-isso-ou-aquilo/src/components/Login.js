@@ -1,19 +1,19 @@
 // components/Login.js
-import React, { useState } from 'react';
 import '../styles/Login.css';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+// ... outros imports e estilos
 
 const Login = ({ onLogin }) => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    // Lógica de autenticação aqui (pode ser uma chamada a uma API, etc.)
-    // Aqui, estou apenas verificando se o username e a senha não estão vazios
-    if (username && password) {
-      onLogin(username);
-    } else {
-      alert('Por favor, insira um nome de usuário e senha.');
-    }
+    // Lógica de autenticação...
+
+    // Após autenticação bem-sucedida, redirecionar para a seleção de categoria
+    navigate('/categoryselection');
   };
 
   return (

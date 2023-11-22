@@ -1,26 +1,27 @@
 // components/CategorySelectionScreen.js
+
+import '../styles/CategorySelection.css';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/CategorySelection.css';
-const CategorySelection = ({ onSelectCategory }) => {
+// ... outros imports e estilos
+
+const CategorySelection = () => {
+  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState('');
 
-  const handleCategorySelect = (category) => {
+const handleCategorySelect = (category) => {
     setSelectedCategory(category);
-    handleStartGame();
-    
+    navigate(`/gamescreen/${category}`); // Navega para a rota de GameScreen com o parâmetro de categoria selecionada
   };
-
-  const navigate = useNavigate();
-
-  const handleStartGame = () => {
+ /* const handleStartGame = () => {
     if (selectedCategory) {
-     onSelectCategory(selectedCategory);
-     navigate('/gamescreen');
+      onSelectCategory(selectedCategory);
+      // Após a seleção da categoria, redirecionar para a tela do jogo
+      navigate('/gamescreen');
     } else {
-     alert('Por favor, selecione uma categoria antes de iniciar o jogo.');
+      alert('Por favor, selecione uma categoria antes de iniciar o jogo.');
     }
-  };
+  };*/
 
   return (
     <div>

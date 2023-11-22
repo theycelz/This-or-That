@@ -45,6 +45,7 @@ const Game = () => {
          ) : null
        ) : (
          <CategorySelection onSelectCategory={handleSelectCategory} />
+         
        )
      ) : (
        <Login onLogin={handleLogin} />
