@@ -1,18 +1,24 @@
 // components/CategorySelectionScreen.js
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/CategorySelection.css';
 const CategorySelection = ({ onSelectCategory }) => {
   const [selectedCategory, setSelectedCategory] = useState('');
 
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
+    handleStartGame();
+    
   };
+
+  const navigate = useNavigate();
 
   const handleStartGame = () => {
     if (selectedCategory) {
-      onSelectCategory(selectedCategory);
+     onSelectCategory(selectedCategory);
+     navigate('/gamescreen');
     } else {
-      alert('Por favor, selecione uma categoria antes de iniciar o jogo.');
+     alert('Por favor, selecione uma categoria antes de iniciar o jogo.');
     }
   };
 
@@ -49,7 +55,6 @@ const CategorySelection = ({ onSelectCategory }) => {
       <footer>
         <img src="./thisorthat.png" alt="Rodapé com imagem" />
       </footer>
-      <button onClick={handleStartGame}>Iniciar Jogo</button>
     </div>
   );
 };
