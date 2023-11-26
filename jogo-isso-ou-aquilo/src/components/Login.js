@@ -35,6 +35,10 @@ const loginEmailPassword = async () => {
   }
 }
 
+const singOut = async () => {
+  await signOut(auth);
+}
+
 const createAccount = async () => {
   const loginEmail = emailLoginInput.value;
   const loginPassword = passwordInput.value;
@@ -47,9 +51,6 @@ const createAccount = async () => {
     console.log(error);
   }
 }
-
-signInButton.addEventListener("click", loginEmailPassword);
-registerButton.addEventListener("click", createAccount);
 
 const Login = ({ onLogin }) => {
   const navigate = useNavigate();
