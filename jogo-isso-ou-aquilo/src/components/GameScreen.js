@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import '../styles/thisorthat.css';
-import GameEnd from './GameEnd'; // Importe o componente GameEnd
+import GameEnd from './GameEnd'; 
 
 const GameScreen = () => {
   const { category } = useParams();
@@ -46,8 +46,7 @@ const GameScreen = () => {
       setSelectedImage2(image);
     }
 
-    if (round < 8) { // Ajustado para 10 para exibir até a 11ª imagem, já que a contagem começa em 0
-      setRound(round + 2);
+    if (round < 8) { 
     } else {
       setResult('Fim do Jogo!');
     }
@@ -62,7 +61,7 @@ const GameScreen = () => {
     <div className="game-screen">
       <h1></h1>
       {result ? (
-        <GameEnd playAgain={playAgain} /> // Renderiza o componente GameEnd quando o jogo terminar
+        <GameEnd playAgain={playAgain} /> 
       ) : (
         <>
           <div className="side-left">

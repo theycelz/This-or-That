@@ -10,9 +10,7 @@ const Login = ({ onLogin }) => {
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    // Lógica de autenticação...
-
-    // Após autenticação bem-sucedida, redirecionar para a seleção de categoria
+   
     navigate('/categoryselection');
   };
 

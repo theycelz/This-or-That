@@ -57,12 +57,11 @@
   max-width: 300px;
   max-height: 300px;
   background-size: cover;
-  height: auto; /* Mantém a proporção da imagem */
-  border-radius: 10px; /* Arredonda as bordas */
-  background-color: #ccc; /* Cor de fundo de fallback caso a imagem não carregue ou como placeholder */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Adiciona uma sombra */
-  object-fit: cover; /* Ajuste para 'cover' para preencher o contêiner mantendo a proporção */
-}
+  height: auto; 
+  border-radius: 10px; 
+  background-color: #ccc; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+  object-fit: cover; 
 
 .choose-button {
   display: block;
@@ -82,4 +81,4 @@
 
 .lilac{
   background-color: #87439f;
-}
+}}

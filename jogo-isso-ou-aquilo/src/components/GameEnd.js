@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/GameEnd.css'; // Importe o arquivo CSS para estilização
-import { useNavigate } from 'react-router-dom';
 
 const GameEnd = ({ playAgain }) => {
   return (
