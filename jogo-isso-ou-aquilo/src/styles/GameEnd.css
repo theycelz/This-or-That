@@ -1,0 +1,50 @@
+.game-end {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+ }
+ 
+ .end-box {
+  text-align: center;
+  justify-content: center;
+  background-color: #5ae7a3;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+ }
+
+ .branco{
+  color:#fff
+ }
+ 
+ .play-again-box {
+  margin-top: 20px;
+  background-color: #87439F;
+ }
+ 
+ .play-again-box button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  background-color: #87439F;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+ }
+ 
+ .play-again-box button:hover {
+  background-color: #2980b9;
+ }
+ 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import '../styles/thisorthat.css';
+import GameEnd from './GameEnd'; // Importe o componente GameEnd
 
 const GameScreen = () => {
   const { category } = useParams();
@@ -12,7 +13,7 @@ const GameScreen = () => {
 
   const fetchAnimalImages = async () => {
     try {
-      const response = await fetch('https://api.thedogapi.com/v1/images/search?limit=14');
+      const response = await fetch('https://api.thedogapi.com/v1/images/search?limit=12');
       const data = await response.json();
       setImages(data);
     } catch (error) {
@@ -22,7 +23,7 @@ const GameScreen = () => {
 
   const fetchCatImages = async () => {
     try {
-      const response = await fetch('https://api.thecatapi.com/v1/images/search?limit=14');
+      const response = await fetch('https://api.thecatapi.com/v1/images/search?limit=12');
       const data = await response.json();
       setImages(data);
     } catch (error) {
@@ -30,12 +31,8 @@ const GameScreen = () => {
     }
   };
 
-
-  
   useEffect(() => {
-    if (category === 'Gatos') {
-      fetchCatImages();
-    } else if (category === 'Artistas') {
+    if (category === 'Gatos' || category === 'Artistas') {
       fetchCatImages();
     } else {
       fetchAnimalImages();
@@ -49,20 +46,23 @@ const GameScreen = () => {
       setSelectedImage2(image);
     }
 
-    if (round < 12) {
+    if (round < 8) { // Ajustado para 10 para exibir até a 11ª imagem, já que a contagem começa em 0
       setRound(round + 2);
     } else {
       setResult('Fim do Jogo!');
     }
   };
 
+  const playAgain = () => {
+    setRound(0);
+    setResult('');
+  };
+
   return (
     <div className="game-screen">
-      <h1>Categoria selecionada: {category}</h1>
+      <h1></h1>
       {result ? (
-        <div className="result-message">
-          <h2>{result}</h2>
-        </div>
+        <GameEnd playAgain={playAgain} /> // Renderiza o componente GameEnd quando o jogo terminar
       ) : (
         <>
           <div className="side-left">
@@ -72,7 +72,10 @@ const GameScreen = () => {
                 src={images[round] ? images[round].url : ''}
                 alt={`image${round + 1}`}
               />
-              <button className="choose-button PS2P verde" onClick={() => handleChoose(images[round], 0)}>
+              <button
+                className="choose-button PS2P verde"
+                onClick={() => handleChoose(images[round], 0)}
+              >
                 Escolher 1
               </button>
             </div>
