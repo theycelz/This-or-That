@@ -1,9 +1,7 @@
-// components/CategorySelectionScreen.js
 
 import '../styles/CategorySelection.css';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// ... outros imports e estilos
 
 const CategorySelection = () => {
   const navigate = useNavigate();
@@ -13,15 +11,7 @@ const handleCategorySelect = (category) => {
     setSelectedCategory(category);
     navigate(`/gamescreen/${category}`); // Navega para a rota de GameScreen com o parâmetro de categoria selecionada
   };
- /* const handleStartGame = () => {
-    if (selectedCategory) {
-      onSelectCategory(selectedCategory);
-      // Após a seleção da categoria, redirecionar para a tela do jogo
-      navingate('/gamescreen');
-    } else {
-      alert('Por favor, selecione uma categoria antes de iniciar o jogo.');
-    }
-  };*/
+
 
   return (
     <div>
@@ -30,20 +20,20 @@ const handleCategorySelect = (category) => {
       <p className="paragrafo PS2P branco">Categorias</p>
       <div className="container">
         <div className="categories">
-          <div className={`category cantor ${selectedCategory === 'cantor' ? 'selected' : ''}`} onClick={() => handleCategorySelect('Cantor')}>
-            <p className="paragrafo Arvo roxo">Cantor</p>
+          <div className={`category cantor ${selectedCategory === 'cantor' ? 'selected' : ''}`} onClick={() => handleCategorySelect('Artistas')}>
+            <p className="paragrafo Arvo roxo">Artistas</p>
           </div>
 
-          <div className={`category animais ${selectedCategory === 'animais' ? 'selected' : ''}`} onClick={() => handleCategorySelect('Animais')}>
-            <p className="paragrafo Arvo roxo">Animais</p>
+          <div className={`category animais ${selectedCategory === 'animais' ? 'selected' : ''}`} onClick={() => handleCategorySelect('Cães')}>
+            <p className="paragrafo Arvo roxo">Cães</p>
           </div>
 
           <div className={`category comidas ${selectedCategory === 'comidas' ? 'selected' : ''}`} onClick={() => handleCategorySelect('Comidas')}>
             <p className="paragrafo Arvo roxo">Comida</p>
           </div>
 
-          <div className={`category herois  ${selectedCategory === 'herois' ? 'selected' : ''}`} onClick={() => handleCategorySelect('Heróis')}>
-            <p className="paragrafo Arvo roxo">Heróis</p>
+          <div className={`category herois  ${selectedCategory === 'herois' ? 'selected' : ''}`} onClick={() => handleCategorySelect('Gatos')}>
+            <p className="paragrafo Arvo roxo">Gatos</p>
           </div>
 
           {/* Add outras categorias*/}
