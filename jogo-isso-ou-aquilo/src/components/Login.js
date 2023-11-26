@@ -56,7 +56,8 @@ const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-    // Após autenticação bem-sucedida, redirecionar para a seleção de categoria
+  const handleLogin = () => {
+    
     navigate('/categoryselection');
   };
 
@@ -104,5 +105,5 @@ const Login = ({ onLogin }) => {
       </div>
     </>
   );
-
+};
 export default Login;
