@@ -35,9 +35,6 @@ const loginEmailPassword = async () => {
   }
 }
 
-const singOut = async () => {
-  await signOut(auth);
-}
 
 const createAccount = async () => {
   const loginEmail = emailLoginInput.value;
