@@ -4,157 +4,57 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { initializeApp } from 'firebase/app';
 import {
+  connectAuthEmulator,
   createUserWithEmailAndPassword,
   getAuth,
-  sendEmailVerification,
   signInWithEmailAndPassword
 } from 'firebase/auth';
 import { firebaseConfig } from './config';
-import firebase from 'firebase/app';
-import 'firebase/firestore';
 // ... outros imports e estilos
 
 initializeApp(firebaseConfig);
 
 const auth = getAuth();
+connectAuthEmulator(auth, "http://localhost:9099");
 
 const emailLoginInput = document.getElementById('emailLogin');
 const passwordInput = document.getElementById('password');
 const signInButton = document.getElementById('signInButton');
+const registerButton = document.getElementById('registerButton');
 
-function toggleSignIn() {
-  if (auth.currentUser) {
-    signOut(auth);
-  } else {
-    const emailLogin = emailLoginInput.value;
-    const password = passwordInput.value;
-    if (emailLogin.length < 4) {
-      alert('Por favor, digite um endereço de email válido.');
-      return;
-    }
-    if (password.length < 4) {
-      alert('Por favor, digite uma senha válida.');
-      return;
-    }
-    signInWithEmailAndPassword(auth, email, password).catch(function (error) {
-      // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      if (errorCode === 'auth/wrong-password') {
-        alert('Wrong password.');
-      } else {
-        alert(errorMessage);
-      }
-      console.log(error);
-      signInButton.disabled = false;
-    });
-  }
-  signInButton.disabled = true;
-}
+const loginEmailPassword = async () => {
+  const loginEmail = emailLoginInput.value;
+  const loginPassword = passwordInput.value;
 
-function handleSignUp() {
-  const emailLogin = emailLoginInput.value;
-  const password = passwordInput.value;
-  if (emailLogin.length < 4) {
-    alert('Please enter an email address.');
-    return;
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
+    console.log(userCredential.user);
   }
-  if (password.length < 4) {
-    alert('Please enter a password.');
-    return;
-  }
-  // Create user with email and pass.
-  createUserWithEmailAndPassword(auth, emailLogin, password).catch(function (error) {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    if (errorCode == 'auth/weak-password') {
-      alert('The password is too weak.');
-    } else {
-      alert(errorMessage);
-    }
+  catch(error) {
     console.log(error);
-  });
-}
-
-/**
- * Sends an email verification to the user.
- */
-function sendVerificationEmailToUser() {
-  const currentUser = auth.currentUser;
-
-  if (currentUser) {
-    sendEmailVerification(currentUser).then(function () {
-      alert('Email de verificação enviado.');
-    });
-  } else {
-    console.error('Usuário não está autenticado.');
   }
 }
 
-signInButton.addEventListener('click', toggleSignIn, false);
-signUpButton.addEventListener('click', handleSignUp, false);
-verifyEmailButton.addEventListener('click', sendVerificationEmailToUser, false);
+const createAccount = async () => {
+  const loginEmail = emailLoginInput.value;
+  const loginPassword = passwordInput.value;
+
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, loginEmail, loginPassword);
+    console.log(userCredential.user);
+  }
+  catch(error) {
+    console.log(error);
+  }
+}
+
+signInButton.addEventListener("click", loginEmailPassword);
+registerButton.addEventListener("click", createAccount);
 
 const Login = ({ onLogin }) => {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
-  const handleLogin = () => {
-    // Lógica de autenticação...
-    async function authenticateUser(email, password) {
-      const usersCollection = firebase.firestore().collection('users');
-      
-      try {
-        let querySnapshot = await usersCollection.where('email', '==', email).get();
-        // Verifique o usuario
-        if (querySnapshot.empty) {
-          // Usuario não encontrado
-          console.log('Usuário não encontrado.');
-          return false;
-        }
-        // Verifique a senha
-        querySnapshot = await usersCollection.where('password', '==', password).get();
-        if (querySnapshot.empty) {
-          // Usuario sem senha
-          console.log('Usuário sem senha encontrado.');
-          return false;
-        }
-    
-        const userDoc = querySnapshot.docs[0];
-        const userData = userDoc.data();
-    
-        if (userData.password === password) {
-          console.log('Login bem-sucedido.');
-          return true;
-        } else {
-          console.log('Senha incorreta.');
-          return false;
-        }
-      } catch (error) {
-        console.error('Erro ao autenticar usuário:', error);
-        return false;
-      }
-    }
-
-    const emailLogin = document.getElementById('emailLogin');
-    const password = document.getElementById('password');
-    const loginButton = document.getElementById('loginButton');
-
-    loginButton.addEventListener('click', () => {
-      const emailLogin = emailInput.value;
-      const password = passwordInput.value;
-
-      authenticateUser(emailLogin, password).then((result) => {
-        if (result) {
-          // Redireciona apos um login bem sucedido
-          console.log('Login bem sucedido. Redirecionando para a página principal...');
-        } else {
-          // Exibe uma mensagem de erro
-          console.log('Falha no login. Verifique suas credenciais.');
-        }
-      });
-  });
 
     // Após autenticação bem-sucedida, redirecionar para a seleção de categoria
     navigate('/categoryselection');
@@ -204,6 +104,5 @@ const Login = ({ onLogin }) => {
       </div>
     </>
   );
-};
 
 export default Login;
