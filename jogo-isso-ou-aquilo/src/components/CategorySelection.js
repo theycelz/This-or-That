@@ -17,7 +17,7 @@ const handleCategorySelect = (category) => {
     if (selectedCategory) {
       onSelectCategory(selectedCategory);
       // Após a seleção da categoria, redirecionar para a tela do jogo
-      navigate('/gamescreen');
+      navingate('/gamescreen');
     } else {
       alert('Por favor, selecione uma categoria antes de iniciar o jogo.');
     }
